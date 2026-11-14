@@ -1,8 +1,11 @@
 from pathlib import Path
+from config.env import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = 'django-insecure-s$0@bal(n=%owzv4*toq$!3d3bwm)*gaqcm_f=$j^x_qfj4$+%'
+SECRET_KEY = env.SECRET_KEY.get_secret_value()
+
+ALLOWED_HOSTS = env.ALLOWED_HOSTS
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -73,9 +76,3 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}

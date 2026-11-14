@@ -1,3 +1,3 @@
-DEBUG = False
+from .base import *
 
-ALLOWED_HOSTS = ["www.example.com"]
+DEBUG = False
