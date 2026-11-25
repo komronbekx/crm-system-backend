@@ -7,6 +7,8 @@ SECRET_KEY = env.SECRET_KEY.get_secret_value()
 
 ALLOWED_HOSTS = env.ALLOWED_HOSTS
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -19,6 +21,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
 
     'apps.core.apps.CoreConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
